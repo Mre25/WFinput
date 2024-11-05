@@ -17,12 +17,29 @@ namespace WFinput
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+
+        
+
+
+        private void Buttclick(object sender, EventArgs e)
+        {
+            Button  Buttclick = sender as Button;
+            if (Buttclick == regisbutt) {
+
+                registration regis = new registration();
+                regis.Show();
+                this.Hide();
+
+            }else if (Buttclick == searchbutt)
+            {
+                search sear = new search();
+                sear.Show();
+                this.Hide();
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
