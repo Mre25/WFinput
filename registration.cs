@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using System.Linq;
 
 namespace WFinput
@@ -40,19 +41,21 @@ namespace WFinput
 
         private void registbutt_Click(object sender, EventArgs e)
         {
-            if (new[]{ ID.Text,
-                Fullname.Name,
-                Major.Text,
-                Academicyear.Text,
-                Address.Text,
-                Phone.Text }
-                .Any(field =>String.IsNullOrWhiteSpace(field)))
-                {
-                MessageBox.Show("Please Fill In All Fields.");
-                }
+            var fields = new[] { IDTB.Text, NameTB.Text, MajTB.Text, AcadeTB.Text, AddrTB.Text, PhoneTB.Text };
+
+            // التحقق من أن IDTB يحتوي على أرقام فقط
+            bool isIdValid = Regex.IsMatch(IDTB.Text, @"^\d+$"); // حقل ID يحتوي على أرقام فقط
+
+            // تحقق من جميع الحقول والـ RadioButtons
+            if (!isIdValid ||
+                fields.Any(field => String.IsNullOrWhiteSpace(field)) ||
+                !(MaleRB.Checked || FemaleRB.Checked))
+            {
+                MessageBox.Show("Please Fill In All Fields and ensure ID is numeric."); // رسالة خطأ
+            }
             else
             {
-                MessageBox.Show("Registration has been completed successfully.");
+                MessageBox.Show("Registration has been completed successfully."); // رسالة نجاح
             }
         }
     }

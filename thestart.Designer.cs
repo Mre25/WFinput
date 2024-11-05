@@ -79,6 +79,7 @@
             Margin = new Padding(8, 7, 8, 7);
             Name = "thestart";
             Text = "thestart";
+            Load += thestart_Load;
             ResumeLayout(false);
         }
 
