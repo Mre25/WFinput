@@ -1,6 +1,6 @@
 ﻿namespace WFinput
 {
-    partial class search
+    partial class update
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             SuspendLayout();
             // 
-            // search
+            // update
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1398, 874);
-            Name = "search";
-            Text = "search";
-            Load += search_Load;
+            Name = "update";
+            Text = "update";
             ResumeLayout(false);
         }
 

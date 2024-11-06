@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace WFinput
 {
-    public partial class search : Form
+    public partial class delete : Form
     {
-        public search()
+        public delete()
         {
             InitializeComponent();
-        }
-
-        private void search_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

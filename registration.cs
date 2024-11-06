@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Data.SqlClient;
+
 
 namespace WFinput
 {
@@ -41,7 +43,7 @@ namespace WFinput
 
         private void registbutt_Click(object sender, EventArgs e)
         {
-            var fields = new[] { IDTB.Text, NameTB.Text, MajTB.Text, AcadeTB.Text, AddrTB.Text, PhoneTB.Text };
+            var fields = new[] { IDTB.Text, NameTB.Text, PhoneTB.Text };
 
             // التحقق من أن IDTB يحتوي على أرقام فقط
             bool isIdValid = Regex.IsMatch(IDTB.Text, @"^\d+$"); // حقل ID يحتوي على أرقام فقط

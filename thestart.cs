@@ -39,6 +39,18 @@ namespace WFinput
                 sear.Show();
 
             }
+            else if (Buttclick == updateButt)
+            {
+                update upda = new update();
+                upda.Show();
+
+            }
+            else if (Buttclick == deletebutt)
+            {
+                delete del = new delete();
+                del.Show();
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
