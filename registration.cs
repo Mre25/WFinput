@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,14 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace WFinput
 {
     public partial class registration : Form
     {
+
         public registration()
         {
             InitializeComponent();
@@ -59,6 +62,13 @@ namespace WFinput
             {
                 MessageBox.Show("Registration has been completed successfully."); // رسالة نجاح
             }
+
+            string c = @"Provider = Microsoft.ACE.OLEDB.12.0;Date Source= \\CollegeDB.mdb;" + "Connection Timeout = 20;" + "Persist Security Info= False;" ;
+
+            OleDBConnection con = new OleDbConnection(S);
+
+            
         }
     }
-}
+
+    }
